@@ -38,7 +38,7 @@ export function HeroSection() {
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="text-lg">Halo Aku Rores ez!👋</h3>
             <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
-              Bikin Website Rp. 99k,<Cover>Cepet banget, 1 hari doang 🤯</Cover>
+              Bikin Website<Cover>Cepet banget, 1 hari doang 🤯</Cover>
             </h1>
             <TextGenerateEffect words={words} />
 
