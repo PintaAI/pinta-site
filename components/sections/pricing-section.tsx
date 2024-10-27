@@ -10,9 +10,46 @@ export function PricingSection() {
   }
 
   return (
-    <div className="mt-20 mb-10 w-full max-w-5xl mx-auto">
+    <div className="mt-20 mb-10 w-full max-w-7xl mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-8">Pilih Paket Website Sesuai Kebutuhan Mu</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <Card className="bg-background/80 backdrop-blur-sm border-primary/20 h-full">
+          <div className="flex flex-col h-full">
+            <CardHeader className="pb-0">
+              <h3 className="text-lg font-semibold text-primary">Free</h3>
+              <div className="text-3xl font-bold mt-2">Rp 0</div>
+              <p className="text-sm text-muted-foreground mt-1">Untuk Instagram dibawah 10k followers</p>
+              <p className="text-xs text-primary mt-1">⚡ Delivery 1 Hari</p>
+            </CardHeader>
+            <CardContent className="flex flex-col flex-grow">
+              <div className="space-y-2 flex-grow">
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary" />
+                  <span className="text-sm">Landing Page Simple</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary" />
+                  <span className="text-sm">1 Section</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary" />
+                  <span className="text-sm">Responsive Design</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-primary" />
+                  <span className="text-sm">No Revisi</span>
+                </div>
+              </div>
+              <Button 
+                className="w-full mt-6"
+                onClick={() => handleWhatsAppClick("Free", "Rp 0")}
+              >
+                Pilih Paket
+              </Button>
+            </CardContent>
+          </div>
+        </Card>
+
         <Card className="bg-background/80 backdrop-blur-sm border-primary/20 h-full">
           <div className="flex flex-col h-full">
             <CardHeader className="pb-0">
