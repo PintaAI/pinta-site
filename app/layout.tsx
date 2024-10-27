@@ -8,7 +8,7 @@ import { Footer } from "@/components/navigation/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Pinta",
+  title: "Pinta-Site",
   description: "Empowering businesses with cutting-edge AI solutions",
 }
 
