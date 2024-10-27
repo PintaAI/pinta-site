@@ -1,25 +1,21 @@
 import { Card } from "../ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import { getVercelProjects } from "@/lib/vercel"
 
-const projects = [
-  {
-    title: "Personal Portfolio",
-    description: "Modern portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations, dark mode, and responsive design.",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
-    image: "/professional-photo.png",
-    link: "/"
-  },
-  {
-    title: "Website Development Service",
-    description: "Professional website development service for content creators and small businesses. Fast turnaround time and affordable pricing.",
-    tech: ["Next.js", "React", "Tailwind", "UI/UX"],
-    image: "/professional-photo.png",
-    link: "/"
+async function ProjectsSection() {
+  let projects;
+  try {
+    projects = await getVercelProjects();
+  } catch (error) {
+    console.error('Failed to fetch Vercel projects:', error);
+    return (
+      <div className="p-4 text-red-500">
+        Error loading projects. Check the console for details.
+      </div>
+    );
   }
-]
 
-export function ProjectsSection() {
   return (
     <section className="py-24 bg-background">
       <div className="container px-4 mx-auto">
@@ -35,7 +31,7 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {projects.map((project, index) => (
-            <Link href={project.link} key={index}>
+            <Link href={project.deploymentUrl} key={index} target="_blank" rel="noopener noreferrer">
               <Card className="group overflow-hidden border-primary/10 hover:border-primary/30 transition-all duration-300">
                 <div className="relative h-64 w-full">
                   <Image
@@ -44,22 +40,15 @@ export function ProjectsSection() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={index < 2} // Prioritize loading first 2 images
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-50" />
                 </div>
                 <div className="p-6">
                   <h4 className="text-2xl font-bold mb-2">{project.title}</h4>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                    {project.framework}
+                  </span>
                 </div>
               </Card>
             </Link>
@@ -69,3 +58,5 @@ export function ProjectsSection() {
     </section>
   )
 }
+
+export { ProjectsSection }

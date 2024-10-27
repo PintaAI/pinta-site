@@ -33,8 +33,8 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container px-4 py-24 mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12 md:mt-0 mt-16">
+      <div className="container px-4 py-10 mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 mt-10 md:mt-16">
           <div className="flex-1 flex flex-col gap-4">
             <h3 className="text-lg">Halo Aku Rores ez!👋</h3>
             <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">

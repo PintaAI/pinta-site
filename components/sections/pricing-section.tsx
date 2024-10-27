@@ -10,7 +10,7 @@ export function PricingSection() {
   }
 
   return (
-    <div className="mt-32 mb-10 w-full max-w-5xl mx-auto">
+    <div className="mt-20 mb-10 w-full max-w-5xl mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-8">Pilih Paket Website Sesuai Kebutuhan Mu</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Card className="bg-background/80 backdrop-blur-sm border-primary/20 h-full">
